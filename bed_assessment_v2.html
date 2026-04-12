@@ -4,29 +4,76 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ENNEREV 顧客客製化床款建議</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f7f5f2;
+      background: #f0e9de;
       color: #1a1a1a;
-      padding: 0 0 48px;
+      padding: 0 0 0;
       min-height: 100vh;
+    }
+
+    /* ── Video Hero (Aman-style) ── */
+    .video-hero {
+      position: relative; width: 100%; height: 100vh;
+      overflow: hidden; background: #1a1209;
+    }
+    .video-hero video {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; opacity: 0.72;
+    }
+    .video-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 14px;
+    }
+    .video-brand {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(44px, 9vw, 88px);
+      font-weight: 300; letter-spacing: 0.45em;
+      color: #fff; text-align: center;
+    }
+    .video-divider { width: 50px; height: 1px; background: #c8b99a; }
+    .video-tagline {
+      font-size: clamp(10px, 1.4vw, 13px);
+      letter-spacing: 0.32em; color: #c8b99a;
+      text-transform: uppercase; text-align: center;
+    }
+    .video-scroll {
+      position: absolute; bottom: 44px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column;
+      align-items: center; gap: 8px;
+      cursor: pointer; animation: scrollBounce 2.4s ease-in-out infinite;
+      text-decoration: none;
+    }
+    .video-scroll-label {
+      font-size: 10px; letter-spacing: 0.24em;
+      color: #c8b99a; text-transform: uppercase;
+    }
+    .video-scroll svg { width: 18px; height: 18px; stroke: #c8b99a; fill: none; }
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(10px); }
     }
 
     /* ── Hero ── */
     .hero {
       width: 100%;
-      height: 220px;
+      height: 260px;
       overflow: hidden;
       position: relative;
-      background: #1a1a1a;
+      background: #1a1209;
     }
     .hero img {
       width: 100%; height: 100%;
-      object-fit: cover;
-      opacity: 0.72;
+      object-fit: cover; object-position: center 30%;
+      opacity: 0.78;
     }
     .hero-overlay {
       position: absolute; inset: 0;
@@ -65,7 +112,7 @@
       background: #c8b99a; margin: 14px auto 0;
     }
 
-    .container { max-width: 680px; margin: 0 auto; padding: 0 16px; }
+    .container { max-width: 680px; margin: 0 auto; padding: 0 16px 48px; }
 
     .page-intro {
       text-align: center;
@@ -78,9 +125,9 @@
     .page-intro p { font-size: 14px; color: #777; line-height: 1.7; }
 
     .section {
-      background: #fff; border-radius: 16px;
+      background: #faf6ef; border-radius: 16px;
       padding: 24px; margin-bottom: 14px;
-      border: 1px solid #ece8e1;
+      border: 1px solid #e2d9cb;
     }
     .section-title {
       font-size: 11px; font-weight: 600;
@@ -123,7 +170,7 @@
     .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
     .card {
       padding: 14px; border-radius: 12px;
-      border: 1.5px solid #e0dbd3; background: #fff;
+      border: 1.5px solid #ddd4c4; background: #fdf9f3;
       cursor: pointer; transition: all 0.15s; user-select: none;
     }
     .card:hover { border-color: #c8b99a; }
@@ -137,9 +184,36 @@
     .firmness-labels { display: flex; justify-content: space-between; font-size: 11px; color: #aaa; margin-top: 6px; }
     .firmness-display { text-align: center; font-size: 13px; color: #a08060; font-weight: 500; margin-top: 8px; }
 
+    /* Bed Feature Photo */
+    .bed-feature-photo {
+      width: 100%; border-radius: 16px;
+      overflow: hidden; position: relative;
+      margin-bottom: 20px;
+    }
+    .bed-feature-photo img {
+      width: 100%; height: 240px;
+      object-fit: cover; object-position: center 40%;
+      display: block;
+    }
+    .bed-feature-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 22px 20px 18px;
+      background: linear-gradient(to top, rgba(20,12,4,0.72), transparent);
+    }
+    .bed-feature-caption-label {
+      font-size: 10px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: #c8b99a;
+      display: block; margin-bottom: 4px;
+    }
+    .bed-feature-caption-text {
+      font-size: 15px; color: #fff;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300; letter-spacing: 0.05em;
+    }
+
     /* InBody */
     .advanced-section {
-      background: #faf7f2; border: 1.5px solid #e0d8cc;
+      background: #f5efe4; border: 1.5px solid #ddd0bb;
       border-radius: 16px; padding: 24px; margin-bottom: 14px;
     }
     .advanced-badge {
@@ -302,27 +376,30 @@
 
     /* ── Footer ── */
     .store-footer {
-      background: #fff; border-top: 1px solid #ece8e1;
-      margin-top: 32px; padding: 24px 16px;
+      background: #221608;
+      border-top: none;
+      margin-top: 0; padding: 44px 20px 36px;
       text-align: center;
     }
     .store-footer-logo {
-      font-size: 14px; font-weight: 700;
-      letter-spacing: 0.16em; color: #1a1a1a; margin-bottom: 14px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 18px; font-weight: 300;
+      letter-spacing: 0.28em; color: #c8b99a; margin-bottom: 14px;
     }
     .store-footer-divider {
-      width: 32px; height: 1px; background: #c8b99a; margin: 0 auto 14px;
+      width: 36px; height: 1px; background: #c8b99a;
+      opacity: 0.45; margin: 0 auto 18px;
     }
     .store-info-row {
       display: flex; align-items: flex-start; justify-content: center;
-      gap: 8px; margin-bottom: 8px;
+      gap: 8px; margin-bottom: 10px;
     }
-    .store-info-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
-    .store-info-text { font-size: 13px; color: #555; line-height: 1.6; text-align: left; }
-    .store-info-text a { color: #a08060; text-decoration: none; }
+    .store-info-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; opacity: 0.8; }
+    .store-info-text { font-size: 13px; color: #a0907a; line-height: 1.7; text-align: left; }
+    .store-info-text a { color: #c8b99a; text-decoration: none; }
     .store-info-text a:hover { text-decoration: underline; }
     .store-footer-copy {
-      font-size: 11px; color: #bbb; margin-top: 16px; letter-spacing: 0.06em;
+      font-size: 11px; color: #4a3a28; margin-top: 22px; letter-spacing: 0.08em;
     }
 
     /* Loading spinner */
@@ -354,11 +431,11 @@
     .deco-right { right: 0; transform: scaleX(-1); }
     .deco-left::after {
       content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 80px;
-      background: linear-gradient(to right, transparent, #f7f5f2);
+      background: linear-gradient(to right, transparent, #f0e9de);
     }
     .deco-right::after {
       content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 80px;
-      background: linear-gradient(to right, #f7f5f2, transparent);
+      background: linear-gradient(to right, #f0e9de, transparent);
     }
     @media (max-width: 1100px) { .deco-panel { display: none; } }
 
@@ -444,6 +521,24 @@
   </svg>
 </div>
 
+<!-- Video Hero -->
+<div class="video-hero" id="video-hero">
+  <video autoplay muted loop playsinline>
+    <source src="/static/ennerev_superbe.mp4" type="video/mp4">
+  </video>
+  <div class="video-overlay">
+    <div class="video-brand">ENNEREV</div>
+    <div class="video-divider"></div>
+    <div class="video-tagline">L'arte del sonno · Since 1956</div>
+  </div>
+  <a class="video-scroll" href="#form-page" onclick="document.getElementById('form-page').scrollIntoView({behavior:'smooth'});return false;">
+    <span class="video-scroll-label">探索專屬床款</span>
+    <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </a>
+</div>
+
 <!-- Loading overlay -->
 <div class="loading-overlay" id="loading-overlay">
   <div class="spinner"></div>
@@ -455,8 +550,7 @@
 
   <!-- Hero -->
   <div class="hero">
-    <img src="https://www.ennerev.it/wp-content/uploads/s-blob-v1-IMAGE-q5yMQshANgA-778x1024.jpg"
-         alt="ENNEREV" onerror="this.style.display='none'">
+    <img src="/static/hero.jpg" alt="ENNEREV Belmont Collection">
     <div class="hero-overlay">
       <div class="hero-logo">ENNEREV</div>
       <div class="hero-tagline">Italian Craftsmanship · Since 1956</div>
@@ -599,14 +693,14 @@
 
     <!-- 聯絡資料 -->
     <div class="section">
-      <div class="section-title">聯絡資料（選填）</div>
+      <div class="section-title">聯絡資料（必填）</div>
       <div class="field">
-        <label class="field-label">姓名</label>
-        <input type="text" id="customer_name" class="text-input" placeholder="方便我們稱呼您">
+        <label class="field-label">姓名 <span style="color:#b8705a;font-size:13px;">*</span></label>
+        <input type="text" id="customer_name" class="text-input" placeholder="方便我們稱呼您" required>
       </div>
       <div class="field">
-        <label class="field-label">手機號碼</label>
-        <input type="tel" id="customer_phone" class="text-input" placeholder="方便後續諮詢聯繫">
+        <label class="field-label">手機號碼 <span style="color:#b8705a;font-size:13px;">*</span></label>
+        <input type="tel" id="customer_phone" class="text-input" placeholder="方便後續諮詢聯繫" required>
       </div>
     </div>
 
@@ -622,6 +716,15 @@
         <div class="line-text-sub">獲得最新優惠、專業睡眠建議與售後服務</div>
       </div>
     </a>
+
+    <!-- Bed Feature Photo -->
+    <div class="bed-feature-photo">
+      <img src="/static/belmont_feature.jpg" alt="ENNEREV Belmont Collection">
+      <div class="bed-feature-caption">
+        <span class="bed-feature-caption-label">Belmont Collection</span>
+        <div class="bed-feature-caption-text">義大利頂級工藝，為您量身打造完美睡眠</div>
+      </div>
+    </div>
 
     <button class="submit-btn" onclick="submitForm()">查看我的專屬床款建議</button>
     <p class="privacy-note">您的資料僅用於床款推薦與售後服務，不會提供給第三方</p>
@@ -1088,6 +1191,24 @@ function saveAssessment(data, recommendations) {
 
 // ── Submit ──
 function submitForm() {
+  // 必填驗證
+  var name = document.getElementById('customer_name').value.trim();
+  var phone = document.getElementById('customer_phone').value.trim();
+  if (!name) {
+    document.getElementById('customer_name').focus();
+    document.getElementById('customer_name').style.borderColor = '#b8705a';
+    alert('請填寫姓名');
+    return;
+  }
+  if (!phone) {
+    document.getElementById('customer_phone').focus();
+    document.getElementById('customer_phone').style.borderColor = '#b8705a';
+    alert('請填寫手機號碼');
+    return;
+  }
+  document.getElementById('customer_name').style.borderColor = '';
+  document.getElementById('customer_phone').style.borderColor = '';
+
   var data = collectFormData();
   document.getElementById('loading-overlay').classList.add('active');
 

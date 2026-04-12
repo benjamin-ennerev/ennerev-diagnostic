@@ -18,6 +18,7 @@ import gspread
 from fastapi import FastAPI
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 from pydantic import BaseModel
@@ -30,6 +31,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Serve static files (video, images)
+_static_dir = os.path.join(os.path.dirname(__file__), "static")
+if os.path.exists(_static_dir):
+    app.mount("/static", StaticFiles(directory=_static_dir), name="static")
 
 # ─────────────────────────────────────────────────────────────
 # MATTRESS DATABASE (in-stock Kaohsiung, 高雄門市庫存)
