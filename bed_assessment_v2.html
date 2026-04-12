@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENNEREV 顧客客製化床款建議</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f5f2;
+      color: #1a1a1a;
+      padding: 0 0 48px;
+      min-height: 100vh;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+      background: #1a1a1a;
+    }
+    .hero img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.72;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 6px;
+    }
+    .hero-logo {
+      font-size: 28px; font-weight: 700;
+      letter-spacing: 0.22em; color: #fff;
+    }
+    .hero-tagline {
+      font-size: 11px; letter-spacing: 0.18em;
+      color: #c8b99a; text-transform: uppercase;
+    }
+    .hero-divider {
+      width: 36px; height: 1px; background: #c8b99a; margin-top: 4px;
+    }
+
+    /* ── Brand Header (result page) ── */
+    .brand-header {
+      text-align: center;
+      padding: 32px 16px 24px;
+      margin-bottom: 8px;
+    }
+    .brand-logo {
+      font-size: 26px; font-weight: 700;
+      letter-spacing: 0.18em; color: #1a1a1a; margin-bottom: 6px;
+    }
+    .brand-tagline {
+      font-size: 12px; letter-spacing: 0.14em;
+      color: #888; text-transform: uppercase;
+    }
+    .brand-divider {
+      width: 40px; height: 1px;
+      background: #c8b99a; margin: 14px auto 0;
+    }
+
+    .container { max-width: 680px; margin: 0 auto; padding: 0 16px; }
+
+    .page-intro {
+      text-align: center;
+      margin: 28px 0;
+    }
+    .page-intro h1 {
+      font-size: 20px; font-weight: 600;
+      color: #1a1a1a; margin-bottom: 8px; letter-spacing: 0.04em;
+    }
+    .page-intro p { font-size: 14px; color: #777; line-height: 1.7; }
+
+    .section {
+      background: #fff; border-radius: 16px;
+      padding: 24px; margin-bottom: 14px;
+      border: 1px solid #ece8e1;
+    }
+    .section-title {
+      font-size: 11px; font-weight: 600;
+      color: #b0a090; text-transform: uppercase;
+      letter-spacing: 0.12em; margin-bottom: 20px;
+    }
+    .field { margin-bottom: 24px; }
+    .field:last-child { margin-bottom: 0; }
+    .field-label {
+      font-size: 15px; font-weight: 500;
+      color: #1a1a1a; margin-bottom: 12px; display: block;
+    }
+
+    /* Slider */
+    .slider-row { display: flex; align-items: center; gap: 12px; }
+    .slider-row input[type="range"] {
+      flex: 1; height: 4px;
+      accent-color: #c8b99a; cursor: pointer;
+    }
+    .slider-value {
+      font-size: 15px; font-weight: 600;
+      color: #a08060; min-width: 70px; text-align: right;
+    }
+
+    /* Pills */
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill {
+      padding: 8px 16px; border-radius: 100px;
+      border: 1.5px solid #e0dbd3; background: #fff;
+      font-size: 14px; color: #555;
+      cursor: pointer; transition: all 0.15s; user-select: none;
+    }
+    .pill:hover { border-color: #c8b99a; color: #a08060; }
+    .pill.selected {
+      background: #f7f0e6; border-color: #c8b99a;
+      color: #8a6a40; font-weight: 500;
+    }
+
+    /* Cards */
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+    .card {
+      padding: 14px; border-radius: 12px;
+      border: 1.5px solid #e0dbd3; background: #fff;
+      cursor: pointer; transition: all 0.15s; user-select: none;
+    }
+    .card:hover { border-color: #c8b99a; }
+    .card.selected { background: #f7f0e6; border-color: #c8b99a; }
+    .card-icon { font-size: 22px; margin-bottom: 6px; }
+    .card-title { font-size: 14px; font-weight: 500; color: #1a1a1a; margin-bottom: 2px; }
+    .card.selected .card-title { color: #8a6a40; }
+    .card-sub { font-size: 11px; color: #aaa; line-height: 1.4; }
+
+    /* Firmness */
+    .firmness-labels { display: flex; justify-content: space-between; font-size: 11px; color: #aaa; margin-top: 6px; }
+    .firmness-display { text-align: center; font-size: 13px; color: #a08060; font-weight: 500; margin-top: 8px; }
+
+    /* InBody */
+    .advanced-section {
+      background: #faf7f2; border: 1.5px solid #e0d8cc;
+      border-radius: 16px; padding: 24px; margin-bottom: 14px;
+    }
+    .advanced-badge {
+      display: inline-block; background: #c8b99a; color: #fff;
+      font-size: 11px; font-weight: 600;
+      padding: 3px 10px; border-radius: 100px;
+      margin-bottom: 8px; letter-spacing: 0.06em;
+    }
+    .advanced-desc { font-size: 13px; color: #888; margin-bottom: 20px; line-height: 1.6; }
+    .inbody-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .inbody-field label { font-size: 12px; color: #888; display: block; margin-bottom: 6px; }
+    .inbody-field input {
+      width: 100%; padding: 10px 12px;
+      border-radius: 8px; border: 1.5px solid #e0d8cc;
+      background: #fff; font-size: 14px; color: #1a1a1a;
+      outline: none; transition: border-color 0.15s;
+    }
+    .inbody-field input:focus { border-color: #c8b99a; }
+    .inbody-field input::placeholder { color: #ccc; }
+
+    /* Text inputs */
+    .text-input {
+      width: 100%; padding: 10px 12px;
+      border-radius: 8px; border: 1.5px solid #e0dbd3;
+      font-size: 14px; color: #1a1a1a;
+      outline: none; transition: border-color 0.15s; background: #fff;
+    }
+    .text-input:focus { border-color: #c8b99a; }
+    .text-input::placeholder { color: #ccc; }
+
+    .other-input {
+      margin-top: 8px; width: 100%; padding: 10px 12px;
+      border-radius: 8px; border: 1.5px solid #e0dbd3;
+      font-size: 14px; outline: none;
+      transition: border-color 0.15s; display: none;
+    }
+    .other-input.visible { display: block; }
+    .other-input:focus { border-color: #c8b99a; }
+
+    /* Submit */
+    .submit-btn {
+      width: 100%; padding: 16px;
+      background: #1a1a1a; color: #fff;
+      border: none; border-radius: 12px;
+      font-size: 15px; font-weight: 600;
+      letter-spacing: 0.08em;
+      cursor: pointer; transition: background 0.15s; margin-top: 8px;
+    }
+    .submit-btn:hover { background: #3a3a3a; }
+
+    .privacy-note {
+      text-align: center; font-size: 12px; color: #bbb;
+      margin-top: 12px; line-height: 1.5;
+    }
+
+    /* LINE CTA */
+    .line-cta {
+      background: #fff; border-radius: 16px;
+      padding: 20px 24px; margin-bottom: 14px;
+      border: 1px solid #ece8e1;
+      display: flex; align-items: center; gap: 16px;
+      text-decoration: none; color: inherit;
+      transition: border-color 0.15s;
+    }
+    .line-cta:hover { border-color: #06C755; }
+    .line-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: #06C755; display: flex;
+      align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .line-icon svg { width: 26px; height: 26px; fill: #fff; }
+    .line-text-title { font-size: 15px; font-weight: 600; color: #1a1a1a; margin-bottom: 3px; }
+    .line-text-sub { font-size: 13px; color: #888; }
+
+    /* ── Result page ── */
+    #result-page { display: none; }
+
+    .result-brand-header {
+      text-align: center; padding: 28px 16px 20px; margin-bottom: 4px;
+    }
+    .result-brand-logo {
+      font-size: 22px; font-weight: 700;
+      letter-spacing: 0.18em; color: #1a1a1a; margin-bottom: 4px;
+    }
+    .result-title {
+      font-size: 18px; font-weight: 600;
+      color: #1a1a1a; margin-bottom: 6px; letter-spacing: 0.04em;
+    }
+    .result-subtitle { font-size: 13px; color: #888; line-height: 1.6; }
+    .result-divider { width: 40px; height: 1px; background: #c8b99a; margin: 14px auto; }
+
+    .result-card {
+      background: #fff; border-radius: 16px;
+      padding: 22px; margin-bottom: 12px; border: 1px solid #ece8e1;
+    }
+    .result-card.top-pick { border-color: #c8b99a; background: #fdf9f4; }
+
+    .top-pick-badge {
+      display: inline-block; background: #c8b99a; color: #fff;
+      font-size: 11px; font-weight: 600;
+      padding: 3px 12px; border-radius: 100px;
+      margin-bottom: 10px; letter-spacing: 0.06em;
+    }
+    .rank-badge {
+      display: inline-block; background: #f0ece6; color: #a08060;
+      font-size: 11px; font-weight: 600;
+      padding: 3px 12px; border-radius: 100px;
+      margin-bottom: 10px; letter-spacing: 0.06em;
+    }
+
+    .result-card-image {
+      width: 100%; height: 180px; border-radius: 10px;
+      background: #f0ece6; margin-bottom: 14px;
+      overflow: hidden; display: flex;
+      align-items: center; justify-content: center;
+    }
+    .result-card-image img { width: 100%; height: 100%; object-fit: cover; }
+    .result-card-image-placeholder { font-size: 13px; color: #bbb; letter-spacing: 0.06em; }
+
+    .result-card h3 { font-size: 17px; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
+    .result-card .result-tagline {
+      font-size: 14px; color: #a08060;
+      font-style: italic; margin-bottom: 8px; line-height: 1.5;
+    }
+    .result-reason { font-size: 13px; color: #666; line-height: 1.7; margin-bottom: 12px; }
+    .result-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      padding: 4px 12px; background: #f7f0e6; color: #8a6a40;
+      border-radius: 100px; font-size: 12px; font-weight: 500;
+    }
+
+    .stock-badge {
+      display: inline-block; background: #eaf3de; color: #3B6D11;
+      font-size: 11px; font-weight: 600;
+      padding: 3px 10px; border-radius: 100px;
+      margin-left: 8px; vertical-align: middle;
+    }
+
+    .action-section { margin-top: 20px; }
+    .contact-btn {
+      width: 100%; padding: 15px;
+      background: #1a1a1a; color: #fff;
+      border: none; border-radius: 12px;
+      font-size: 15px; font-weight: 600;
+      letter-spacing: 0.06em; cursor: pointer; margin-bottom: 10px;
+    }
+    .line-result-btn {
+      width: 100%; padding: 14px; background: #06C755; color: #fff;
+      border: none; border-radius: 12px;
+      font-size: 15px; font-weight: 600;
+      cursor: pointer; margin-bottom: 10px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .restart-btn {
+      width: 100%; padding: 12px;
+      background: transparent; color: #888;
+      border: 1.5px solid #e0dbd3; border-radius: 12px;
+      font-size: 14px; cursor: pointer;
+    }
+
+    /* ── Footer ── */
+    .store-footer {
+      background: #fff; border-top: 1px solid #ece8e1;
+      margin-top: 32px; padding: 24px 16px;
+      text-align: center;
+    }
+    .store-footer-logo {
+      font-size: 14px; font-weight: 700;
+      letter-spacing: 0.16em; color: #1a1a1a; margin-bottom: 14px;
+    }
+    .store-footer-divider {
+      width: 32px; height: 1px; background: #c8b99a; margin: 0 auto 14px;
+    }
+    .store-info-row {
+      display: flex; align-items: flex-start; justify-content: center;
+      gap: 8px; margin-bottom: 8px;
+    }
+    .store-info-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+    .store-info-text { font-size: 13px; color: #555; line-height: 1.6; text-align: left; }
+    .store-info-text a { color: #a08060; text-decoration: none; }
+    .store-info-text a:hover { text-decoration: underline; }
+    .store-footer-copy {
+      font-size: 11px; color: #bbb; margin-top: 16px; letter-spacing: 0.06em;
+    }
+
+    /* Loading spinner */
+    .loading-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(247,245,242,0.92);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center; justify-content: center; gap: 16px;
+    }
+    .loading-overlay.active { display: flex; }
+    .spinner {
+      width: 36px; height: 36px;
+      border: 3px solid #e0d8cc;
+      border-top-color: #c8b99a;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loading-text { font-size: 14px; color: #888; letter-spacing: 0.04em; }
+
+    @media (max-width: 480px) {
+      .inbody-grid { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      .hero { height: 170px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Loading overlay -->
+<div class="loading-overlay" id="loading-overlay">
+  <div class="spinner"></div>
+  <div class="loading-text">正在為您分析最適合的床款⋯</div>
+</div>
+
+<!-- ===== FORM PAGE ===== -->
+<div id="form-page">
+
+  <!-- Hero -->
+  <div class="hero">
+    <img src="https://www.ennerev.it/wp-content/uploads/s-blob-v1-IMAGE-q5yMQshANgA-778x1024.jpg"
+         alt="ENNEREV" onerror="this.style.display='none'">
+    <div class="hero-overlay">
+      <div class="hero-logo">ENNEREV</div>
+      <div class="hero-tagline">Italian Craftsmanship · Since 1956</div>
+      <div class="hero-divider"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="page-intro">
+      <h1>顧客客製化床款建議</h1>
+      <p>填寫以下資料，我們將為您從高雄門市庫存挑選最適合您的床款，約需 2–3 分鐘</p>
+    </div>
+
+    <!-- 基本資料 -->
+    <div class="section">
+      <div class="section-title">基本資料</div>
+      <div class="field">
+        <label class="field-label">您的身高</label>
+        <div class="slider-row">
+          <input type="range" id="height" min="140" max="200" value="165" step="1">
+          <span class="slider-value" id="height-display">165 cm</span>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label">您的體重</label>
+        <div class="slider-row">
+          <input type="range" id="weight" min="40" max="130" value="65" step="1">
+          <span class="slider-value" id="weight-display">65 kg</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 睡眠習慣 -->
+    <div class="section">
+      <div class="section-title">睡眠習慣</div>
+      <div class="field">
+        <label class="field-label">您平常最主要的睡姿？</label>
+        <div class="cards" data-group="sleep_position" data-multi="false">
+          <div class="card" data-value="side">
+            <div class="card-icon">🛌</div>
+            <div class="card-title">側睡</div>
+            <div class="card-sub">最需要肩頸支撐</div>
+          </div>
+          <div class="card" data-value="back">
+            <div class="card-icon">😴</div>
+            <div class="card-title">仰睡</div>
+            <div class="card-sub">需要腰部支撐</div>
+          </div>
+          <div class="card" data-value="stomach">
+            <div class="card-icon">🫁</div>
+            <div class="card-title">趴睡</div>
+            <div class="card-sub">需搭配較薄枕頭</div>
+          </div>
+          <div class="card" data-value="mixed">
+            <div class="card-icon">🔄</div>
+            <div class="card-title">混合</div>
+            <div class="card-sub">常翻身換姿勢</div>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label">您對床的軟硬偏好？</label>
+        <div class="slider-row">
+          <input type="range" id="firmness" min="1" max="5" value="3" step="1">
+        </div>
+        <div class="firmness-labels">
+          <span>非常軟</span><span>偏軟</span><span>中等</span><span>偏硬</span><span>非常硬</span>
+        </div>
+        <div class="firmness-display" id="firmness-display">中等（無特別偏好）</div>
+      </div>
+    </div>
+
+    <!-- 身體狀況 -->
+    <div class="section">
+      <div class="section-title">身體狀況</div>
+      <div class="field">
+        <label class="field-label">是否有以下慢性疼痛或不適？（可複選）</label>
+        <div class="pills" data-group="pain" data-multi="true">
+          <div class="pill" data-value="lower_back">腰痠背痛</div>
+          <div class="pill" data-value="neck_shoulder">肩頸僵硬</div>
+          <div class="pill" data-value="hip">髖關節不適</div>
+          <div class="pill" data-value="numbness">手腳麻痺</div>
+          <div class="pill" data-value="insomnia">難以入睡</div>
+          <div class="pill" data-value="snoring">打呼／睡眠呼吸問題</div>
+          <div class="pill" data-value="none">以上皆無</div>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label">床的主要使用情況？</label>
+        <div class="pills" data-group="usage" data-multi="false">
+          <div class="pill" data-value="single">單人使用</div>
+          <div class="pill" data-value="couple">兩人共用</div>
+          <div class="pill" data-value="child">兒童使用</div>
+          <div class="pill" data-value="elder">長輩使用</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 購買需求 -->
+    <div class="section">
+      <div class="section-title">購買需求</div>
+      <div class="field">
+        <label class="field-label">這次換床的主要原因？</label>
+        <div class="pills" data-group="reason" data-multi="false">
+          <div class="pill" data-value="new_home">新家裝潢</div>
+          <div class="pill" data-value="old_mattress">舊床墊老化</div>
+          <div class="pill" data-value="health">身體不適想改善</div>
+          <div class="pill" data-value="upgrade">想升級品質</div>
+          <div class="pill" data-value="gift">送禮</div>
+          <div class="pill other-trigger" data-value="other">其他</div>
+        </div>
+        <input type="text" class="other-input" id="reason-other" placeholder="請說明換床原因">
+      </div>
+    </div>
+
+    <!-- InBody 進階 -->
+    <div class="advanced-section">
+      <div class="advanced-badge">進階選項</div>
+      <div class="section-title">InBody 數據（選填）</div>
+      <p class="advanced-desc">若您有 InBody 報告，填入以下數據可獲得更精準的推薦。沒有也完全沒關係，基本資料已足夠。</p>
+      <div class="inbody-grid">
+        <div class="inbody-field">
+          <label>體脂肪率（%）</label>
+          <input type="number" id="body_fat" placeholder="例：22" min="5" max="60">
+        </div>
+        <div class="inbody-field">
+          <label>骨骼肌率（%）</label>
+          <input type="number" id="muscle_rate" placeholder="例：35" min="10" max="60">
+        </div>
+        <div class="inbody-field">
+          <label>腰臀比（WHR）</label>
+          <input type="number" id="whr" placeholder="例：0.85" min="0.5" max="1.2" step="0.01">
+        </div>
+        <div class="inbody-field">
+          <label>內臟脂肪等級</label>
+          <input type="number" id="visceral_fat" placeholder="例：8" min="1" max="20">
+        </div>
+      </div>
+    </div>
+
+    <!-- 聯絡資料 -->
+    <div class="section">
+      <div class="section-title">聯絡資料（選填）</div>
+      <div class="field">
+        <label class="field-label">姓名</label>
+        <input type="text" id="customer_name" class="text-input" placeholder="方便我們稱呼您">
+      </div>
+      <div class="field">
+        <label class="field-label">手機號碼</label>
+        <input type="tel" id="customer_phone" class="text-input" placeholder="方便後續諮詢聯繫">
+      </div>
+    </div>
+
+    <!-- LINE -->
+    <a class="line-cta" href="https://line.me/R/ti/p/@117eibbi" target="_blank">
+      <div class="line-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.070 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+        </svg>
+      </div>
+      <div>
+        <div class="line-text-title">加入 ENNEREV LINE 官方帳號</div>
+        <div class="line-text-sub">獲得最新優惠、專業睡眠建議與售後服務</div>
+      </div>
+    </a>
+
+    <button class="submit-btn" onclick="submitForm()">查看我的專屬床款建議</button>
+    <p class="privacy-note">您的資料僅用於床款推薦與售後服務，不會提供給第三方</p>
+  </div>
+
+  <!-- Footer (form page) -->
+  <div class="store-footer">
+    <div class="store-footer-logo">ENNEREV 尊宸國際</div>
+    <div class="store-footer-divider"></div>
+    <div class="store-info-row">
+      <span class="store-info-icon">📍</span>
+      <span class="store-info-text">高雄市前鎮區和平二路 238-1 號</span>
+    </div>
+    <div class="store-info-row">
+      <span class="store-info-icon">📞</span>
+      <span class="store-info-text"><a href="tel:072810658">07-281-0658</a></span>
+    </div>
+    <div class="store-info-row">
+      <span class="store-info-icon">🕐</span>
+      <span class="store-info-text">週一、三～日　11:00 – 20:00<br>週二 公休</span>
+    </div>
+    <div class="store-footer-copy">© ENNEREV 尊宸國際有限公司 · Kaohsiung, Taiwan</div>
+  </div>
+</div>
+
+
+<!-- ===== RESULT PAGE ===== -->
+<div id="result-page">
+  <div class="result-brand-header">
+    <div class="result-brand-logo">ENNEREV</div>
+    <div class="result-divider"></div>
+    <div class="result-title">您的專屬床款建議</div>
+    <p class="result-subtitle" id="result-summary">根據您的需求，為您從高雄門市庫存精選 3 款推薦</p>
+  </div>
+
+  <div class="container">
+    <div id="result-cards"></div>
+
+    <div class="action-section">
+      <button class="line-result-btn" onclick="window.open('https://line.me/R/ti/p/@117eibbi','_blank')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.070 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        加入 LINE 諮詢專屬服務
+      </button>
+      <button class="contact-btn" onclick="contactStore()">📞 預約到店體驗</button>
+      <button class="restart-btn" onclick="restartForm()">重新填寫評估</button>
+    </div>
+  </div>
+
+  <!-- Footer (result page) -->
+  <div class="store-footer">
+    <div class="store-footer-logo">ENNEREV 尊宸國際</div>
+    <div class="store-footer-divider"></div>
+    <div class="store-info-row">
+      <span class="store-info-icon">📍</span>
+      <span class="store-info-text">高雄市前鎮區和平二路 238-1 號</span>
+    </div>
+    <div class="store-info-row">
+      <span class="store-info-icon">📞</span>
+      <span class="store-info-text"><a href="tel:072810658">07-281-0658</a></span>
+    </div>
+    <div class="store-info-row">
+      <span class="store-info-icon">🕐</span>
+      <span class="store-info-text">週一、三～日　11:00 – 20:00<br>週二 公休</span>
+    </div>
+    <div class="store-footer-copy">© ENNEREV 尊宸國際有限公司 · Kaohsiung, Taiwan</div>
+  </div>
+</div>
+
+
+<script>
+// ── Sliders ──
+document.getElementById('height').addEventListener('input', function() {
+  document.getElementById('height-display').textContent = this.value + ' cm';
+});
+document.getElementById('weight').addEventListener('input', function() {
+  document.getElementById('weight-display').textContent = this.value + ' kg';
+});
+var firmnessLabels = ['非常軟', '偏軟', '中等（無特別偏好）', '偏硬', '非常硬'];
+document.getElementById('firmness').addEventListener('input', function() {
+  document.getElementById('firmness-display').textContent = firmnessLabels[this.value - 1];
+});
+
+// ── Pills / Cards ──
+document.querySelectorAll('.pills, .cards').forEach(function(group) {
+  var isMulti = group.dataset.multi === 'true';
+  group.querySelectorAll('.pill, .card').forEach(function(item) {
+    item.addEventListener('click', function() {
+      if (!isMulti) {
+        group.querySelectorAll('.pill, .card').forEach(function(i) { i.classList.remove('selected'); });
+      }
+      this.classList.toggle('selected');
+      if (this.dataset.value === 'none') {
+        group.querySelectorAll('.pill, .card').forEach(function(i) {
+          if (i.dataset.value !== 'none') i.classList.remove('selected');
+        });
+        this.classList.add('selected');
+      } else if (group.dataset.group === 'pain') {
+        var noneBtn = group.querySelector('[data-value="none"]');
+        if (noneBtn) noneBtn.classList.remove('selected');
+      }
+      if (this.classList.contains('other-trigger')) {
+        var otherInput = document.getElementById('reason-other');
+        otherInput.classList.toggle('visible', this.classList.contains('selected'));
+      }
+    });
+  });
+});
+
+// ── Collect form data ──
+function collectFormData() {
+  return {
+    height:          parseInt(document.getElementById('height').value),
+    weight:          parseInt(document.getElementById('weight').value),
+    firmness:        parseInt(document.getElementById('firmness').value),
+    sleep_position:  getSelected('sleep_position', false),
+    pain:            getSelected('pain', true),
+    usage:           getSelected('usage', false),
+    reason:          getSelected('reason', false),
+    reason_detail:   document.getElementById('reason-other').value,
+    body_fat:        parseFloat(document.getElementById('body_fat').value) || null,
+    muscle_rate:     parseFloat(document.getElementById('muscle_rate').value) || null,
+    whr:             parseFloat(document.getElementById('whr').value) || null,
+    visceral_fat:    parseFloat(document.getElementById('visceral_fat').value) || null,
+    customer_name:   document.getElementById('customer_name').value.trim(),
+    customer_phone:  document.getElementById('customer_phone').value.trim(),
+    submitted_at:    new Date().toISOString()
+  };
+}
+
+function getSelected(groupName, isMulti) {
+  var group = document.querySelector('[data-group="' + groupName + '"]');
+  if (!group) return isMulti ? [] : '';
+  var selected = Array.from(group.querySelectorAll('.selected')).map(function(el) { return el.dataset.value; });
+  return isMulti ? selected : (selected[0] || '');
+}
+
+// ═══════════════════════════════════════════════
+// MATTRESS DATABASE — 高雄門市庫存
+// ═══════════════════════════════════════════════
+var MATTRESSES = [
+  {
+    id: 'SUPREME',
+    name: 'ICONA Supreme',
+    collection: 'ICONA',
+    technology: '3000 微獨立筒',
+    spring_count: 3000, spring_diam_mm: 20,
+    firmness_score: 8,
+    zones: 7,
+    in_stock_kaohsiung: true,
+    weight_ideal: [45, 75],
+    best_positions: ['side', 'mixed'],
+    best_pain: ['neck_shoulder', 'hip', 'numbness'],
+    best_usage: ['couple', 'single'],
+    tagline: '3000 微獨立筒精密貼合，側睡族群的首選',
+    tags: ['高雄現貨', '3000微獨立筒', '7區支撐', '夫妻互不干擾'],
+    image_url: 'https://www.ennerev.it/wp-content/uploads/icona-materasso.png'
+  },
+  {
+    id: 'UNIQUE',
+    name: 'ICONA Unique',
+    collection: 'ICONA',
+    technology: '1000 獨立筒',
+    spring_count: 1000, spring_diam_mm: 57,
+    firmness_score: 6,
+    zones: 7,
+    in_stock_kaohsiung: true,
+    weight_ideal: [55, 90],
+    best_positions: ['back', 'mixed', 'side'],
+    best_pain: ['lower_back', 'hip', 'none'],
+    best_usage: ['single', 'couple', 'elder'],
+    tagline: '三段軟硬可選，一張床適合全家需求',
+    tags: ['高雄現貨', '1000獨立筒', '7區支撐', '三段軟硬可選'],
+    image_url: 'https://www.ennerev.it/wp-content/uploads/Unique-1.png'
+  },
+  {
+    id: 'HYGGE',
+    name: 'HYBRIDO Hygge',
+    collection: 'HYBRIDO',
+    technology: '1000 獨立筒 × Fresh Memory',
+    spring_count: 1000, spring_diam_mm: 57,
+    firmness_score: 7,
+    zones: 7,
+    in_stock_kaohsiung: true,
+    weight_ideal: [50, 85],
+    best_positions: ['side', 'mixed'],
+    best_pain: ['neck_shoulder', 'insomnia', 'lower_back'],
+    best_usage: ['couple', 'single'],
+    tagline: '記憶棉遇上獨立筒，北歐工藝的均衡睡眠',
+    tags: ['高雄現貨', '1000獨立筒', 'Fresh Memory', 'LAVATECH恆溫', '7區支撐'],
+    image_url: 'https://www.ennerev.it/wp-content/uploads/Nardik-2.png'
+  },
+  {
+    id: 'ADAPTO',
+    name: 'ICONA Adapto',
+    collection: 'ICONA',
+    technology: '800 獨立筒 × Wool-Tech',
+    spring_count: 800, spring_diam_mm: null,
+    firmness_score: 5,
+    zones: null,
+    in_stock_kaohsiung: true,
+    weight_ideal: [45, 85],
+    best_positions: ['mixed', 'side', 'back'],
+    best_pain: ['none', 'insomnia'],
+    best_usage: ['couple', 'single', 'child'],
+    tagline: '均衡軟硬×美麗諾羊毛調溫，四季皆舒適',
+    tags: ['高雄現貨', '800獨立筒', '均衡支撐', '羊毛天然調溫', '四季兩用'],
+    image_url: 'https://www.ennerev.it/wp-content/uploads/ADAPTO.png'
+  },
+  {
+    id: 'XTRA-TECH',
+    name: 'XTRA-Tech',
+    collection: 'XTRA',
+    technology: '1000 獨立筒 × 7區',
+    spring_count: 1000, spring_diam_mm: null,
+    firmness_score: 9,
+    zones: 7,
+    in_stock_kaohsiung: true,
+    weight_ideal: [70, 130],
+    best_positions: ['back', 'stomach'],
+    best_pain: ['lower_back', 'hip', 'snoring'],
+    best_usage: ['single', 'elder'],
+    tagline: '醫療器材一類認證，重度支撐脊椎的科學選擇',
+    tags: ['高雄現貨', '1000獨立筒', '醫療器材認證', '7區支撐', '超硬支撐'],
+    image_url: 'https://www.ennerev.it/wp-content/uploads/xtra-ambientata-navy.jpg'
+  },
+  {
+    id: 'SPRING-800',
+    name: 'SUPERBE Spring',
+    collection: 'SUPERBE',
+    technology: '800 XL獨立筒 18cm × 7區',
+    spring_count: 800, spring_height_cm: 18,
+    firmness_score: 9,
+    zones: 7,
+    in_stock_kaohsiung: true,
+    weight_ideal: [75, 130],
+    best_positions: ['back', 'stomach', 'mixed'],
+    best_pain: ['lower_back', 'hip'],
+    best_usage: ['single', 'couple'],
+    tagline: '18cm XL超長彈簧，頂級旗艦的強力脊椎承托',
+    tags: ['高雄現貨', '800 XL獨立筒', '7區分區', '旗艦Superbe系列', '強力支撐'],
+    image_url: 'https://www.ennerev.it/wp-content/uploads/spring.png'
+  },
+  {
+    id: 'HERMITAGE',
+    name: 'ELEGANZA Hermitage',
+    collection: 'ELEGANZA',
+    technology: '3000 微獨立筒 × Pillow Top',
+    spring_count: 3000, spring_diam_mm: null,
+    firmness_score: 7,
+    zones: null,
+    pillow_top: true,
+    in_stock_kaohsiung: true,
+    weight_ideal: [45, 80],
+    best_positions: ['side', 'mixed'],
+    best_pain: ['neck_shoulder', 'insomnia', 'none'],
+    best_usage: ['couple', 'single'],
+    tagline: '3000微獨立筒加Pillow Top，奢華義式美學與深度包覆',
+    tags: ['高雄現貨', '3000微獨立筒', 'Pillow Top', 'ErgoCert人體工學認證', '奢華款'],
+    image_url: 'https://www.ennerev.it/wp-content/uploads/s-blob-v1-IMAGE-W7nlxVOtTTc.jpg'
+  },
+  {
+    id: 'XTRA-ORDINARIO',
+    name: 'XTRA-Ordinario',
+    collection: 'XTRA',
+    technology: '專利獨立筒 210顆/m²',
+    spring_count: null, spring_per_sqm: 210,
+    firmness_score: 5,
+    zones: null,
+    in_stock_kaohsiung: true,
+    weight_ideal: [50, 100],
+    best_positions: ['mixed', 'side', 'back'],
+    best_pain: ['lower_back', 'insomnia', 'none'],
+    best_usage: ['couple', 'single'],
+    tagline: '專利每平方米210顆獨立筒，義大利最革新的睡眠科技',
+    tags: ['高雄現貨', '210顆/m²專利彈簧', '均衡支撐', '醫療器材認證', '創新設計'],
+    image_url: 'https://www.ennerev.it/wp-content/uploads/xtra-dettaglio-1.jpg'
+  }
+];
+
+// ═══════════════════════════════════════════════
+// RECOMMENDATION ENGINE
+// ═══════════════════════════════════════════════
+function scoreMattress(m, d) {
+  var score = 0;
+  var bmi = d.weight / Math.pow(d.height / 100, 2);
+
+  // 1. Weight compatibility (0–30 pts)
+  var wMin = m.weight_ideal[0], wMax = m.weight_ideal[1];
+  if (d.weight >= wMin && d.weight <= wMax) {
+    score += 30;
+  } else if (d.weight < wMin) {
+    score += Math.max(0, 30 - (wMin - d.weight) * 1.5);
+  } else {
+    score += Math.max(0, 30 - (d.weight - wMax) * 1.5);
+  }
+
+  // 2. Firmness preference match (0–25 pts)
+  // User pref 1-5 → target score 2/4/6/8/9.5
+  var prefMap = { 1:2, 2:4, 3:6, 4:8, 5:9.5 };
+  var target = prefMap[d.firmness] || 6;
+  var diff = Math.abs(m.firmness_score - target);
+  score += Math.max(0, 25 - diff * 4.5);
+
+  // 3. Sleep position (0–20 pts)
+  if (d.sleep_position && m.best_positions.indexOf(d.sleep_position) !== -1) score += 20;
+  else if (d.sleep_position) score += 6;
+
+  // 4. Pain alignment (0–15 pts)
+  var pain = d.pain || [];
+  if (pain.length === 0 || (pain.length === 1 && pain[0] === 'none')) {
+    score += 8;
+  } else {
+    var matchCount = pain.filter(function(p) { return m.best_pain.indexOf(p) !== -1; }).length;
+    score += Math.min(15, matchCount * 7);
+  }
+
+  // 5. Usage match (0–10 pts)
+  if (d.usage && m.best_usage.indexOf(d.usage) !== -1) score += 10;
+
+  // 6. InBody refinement (0–10 pts bonus)
+  if (d.body_fat !== null) {
+    if (d.body_fat > 30 && m.firmness_score <= 7) score += 5;
+    if (d.body_fat <= 22 && m.firmness_score >= 7) score += 5;
+  }
+  if (d.muscle_rate !== null) {
+    if (d.muscle_rate > 42 && m.firmness_score >= 8) score += 5;
+    if (d.muscle_rate <= 32 && m.firmness_score <= 7) score += 5;
+  }
+  if (d.visceral_fat !== null && d.visceral_fat > 10 && m.firmness_score >= 7) score += 3;
+
+  // 7. Always boost in-stock
+  if (m.in_stock_kaohsiung) score += 5;
+
+  return score;
+}
+
+function buildReason(m, d) {
+  var posMap = { side:'側睡', back:'仰睡', stomach:'趴睡', mixed:'混合睡姿' };
+  var posLabel = posMap[d.sleep_position] || '';
+  var pain = d.pain || [];
+  var parts = [];
+
+  // Weight-based comment
+  if (d.weight >= 80) {
+    parts.push('以您 ' + d.weight + ' kg 的體重，' + m.technology + '能提供充足的脊椎承托');
+  } else if (d.weight <= 58) {
+    parts.push('以您輕盈的 ' + d.weight + ' kg 體型，精密彈簧設計完美貼合身體每條曲線');
+  } else {
+    parts.push('您的體重與此款彈簧承重設計完美匹配');
+  }
+
+  // Position-based comment
+  if (d.sleep_position === 'side') {
+    parts.push('側睡族群最需要的肩部下沉空間，此款分區設計精準提供');
+  } else if (d.sleep_position === 'back') {
+    parts.push('仰睡需要的腰椎曲線支撐，7區獨立彈簧精準分散壓力');
+  } else if (d.sleep_position === 'mixed') {
+    parts.push('常翻身換姿勢的您，此款在各種睡姿都能保持均衡支撐');
+  }
+
+  // Pain-based comment
+  if (pain.indexOf('lower_back') !== -1) {
+    parts.push('腰部強化分區有助舒緩腰痠背痛');
+  }
+  if (pain.indexOf('neck_shoulder') !== -1) {
+    parts.push('肩頸區獨立彈簧讓側睡時肩頸壓力大幅降低');
+  }
+  if (pain.indexOf('insomnia') !== -1) {
+    parts.push('優質支撐配合恆溫材質，有助改善入睡困難');
+  }
+  if (pain.indexOf('hip') !== -1) {
+    parts.push('髖部分區緩衝設計，有效減輕髖關節壓力');
+  }
+
+  // Usage-based comment
+  if (d.usage === 'couple') {
+    parts.push('獨立筒結構確保一方翻身完全不影響另一半');
+  }
+  if (d.usage === 'elder') {
+    parts.push('工學設計搭配醫療認證，特別適合長輩的骨骼支撐需求');
+  }
+  if (d.usage === 'child') {
+    parts.push('均衡支撐適合成長中孩子的脊椎發育需求');
+  }
+
+  // InBody comment
+  if (d.body_fat !== null && d.body_fat > 28) {
+    parts.push('根據您的體脂數據，此款緩衝層有效分散身體各部位壓力點');
+  }
+  if (d.muscle_rate !== null && d.muscle_rate > 40) {
+    parts.push('您的高肌肉量需要更強的彈簧支撐，此款正好符合');
+  }
+
+  return parts.slice(0, 3).join('；') + '。';
+}
+
+function getRecommendations(data) {
+  var scored = MATTRESSES.map(function(m) {
+    return { mattress: m, score: scoreMattress(m, data) };
+  });
+  scored.sort(function(a, b) { return b.score - a.score; });
+  var top3 = scored.slice(0, 3);
+
+  return top3.map(function(item, idx) {
+    var m = item.mattress;
+    return {
+      name: m.name,
+      tagline: m.tagline,
+      reason: buildReason(m, data),
+      tags: m.tags,
+      image_url: m.image_url,
+      in_stock_kaohsiung: m.in_stock_kaohsiung,
+      rank: idx + 1
+    };
+  });
+}
+
+// ═══════════════════════════════════════════════
+// DATA STORAGE — 儲存問卷答案至 localStorage
+// (串接後端時，將 localStorage 換為 fetch POST)
+// ═══════════════════════════════════════════════
+function saveAssessment(data, recommendations) {
+  var record = {
+    id: 'assessment_' + Date.now(),
+    timestamp: data.submitted_at,
+    customer: {
+      name: data.customer_name,
+      phone: data.customer_phone
+    },
+    body: {
+      height_cm: data.height,
+      weight_kg: data.weight,
+      bmi: (data.weight / Math.pow(data.height / 100, 2)).toFixed(1),
+      body_fat_pct: data.body_fat,
+      muscle_rate_pct: data.muscle_rate,
+      whr: data.whr,
+      visceral_fat: data.visceral_fat
+    },
+    preferences: {
+      sleep_position: data.sleep_position,
+      firmness_preference: data.firmness,
+      pain_concerns: data.pain,
+      usage: data.usage,
+      reason: data.reason,
+      reason_detail: data.reason_detail
+    },
+    recommendations: recommendations.map(function(r) {
+      return { rank: r.rank, name: r.name, in_stock: r.in_stock_kaohsiung };
+    })
+  };
+
+  // Save to localStorage
+  var existing = JSON.parse(localStorage.getItem('ennerev_assessments') || '[]');
+  existing.push(record);
+  localStorage.setItem('ennerev_assessments', JSON.stringify(existing));
+
+  // ── Plug-in point for backend API ──
+  // fetch('/api/assessment', {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/json' },
+  //   body: JSON.stringify(record)
+  // });
+}
+
+// ── Submit ──
+function submitForm() {
+  var data = collectFormData();
+  document.getElementById('loading-overlay').classList.add('active');
+
+  fetch('/api/recommend', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(function(res) {
+    if (!res.ok) throw new Error('API ' + res.status);
+    return res.json();
+  })
+  .then(function(result) {
+    document.getElementById('loading-overlay').classList.remove('active');
+    showResults(data, result.recommendations);
+  })
+  .catch(function(err) {
+    // Fallback：若後端無法連線，改用本機推薦邏輯
+    console.warn('[ENNEREV] API unavailable, using local engine:', err);
+    var recs = getRecommendations(data);
+    saveAssessment(data, recs);
+    document.getElementById('loading-overlay').classList.remove('active');
+    showResults(data, recs);
+  });
+}
+
+function showResults(data, recs) {
+  document.getElementById('form-page').style.display = 'none';
+  document.getElementById('result-page').style.display = 'block';
+
+  var posMap = { side:'側睡', back:'仰睡', stomach:'趴睡', mixed:'混合睡姿' };
+  var pos = posMap[data.sleep_position] || '';
+  var name = data.customer_name ? data.customer_name + '，' : '';
+  var summary = name + '根據您的' + (pos || '睡眠需求') + '，從高雄門市庫存為您精選 3 款床墊';
+  document.getElementById('result-summary').textContent = summary;
+
+  var container = document.getElementById('result-cards');
+  container.innerHTML = '';
+
+  recs.forEach(function(rec) {
+    var card = document.createElement('div');
+    card.className = 'result-card' + (rec.rank === 1 ? ' top-pick' : '');
+
+    var badgeHtml = rec.rank === 1
+      ? '<div class="top-pick-badge">✦ 最推薦</div>'
+      : '<div class="rank-badge">推薦 ' + rec.rank + '</div>';
+
+    var stockHtml = rec.in_stock_kaohsiung
+      ? '<span class="stock-badge">高雄現貨</span>'
+      : '';
+
+    var imgHtml = rec.image_url
+      ? '<div class="result-card-image"><img src="' + rec.image_url + '" alt="' + rec.name + '" onerror="this.parentNode.innerHTML=\'<span class=result-card-image-placeholder>ENNEREV</span>\'"></div>'
+      : '<div class="result-card-image"><span class="result-card-image-placeholder">ENNEREV</span></div>';
+
+    card.innerHTML =
+      badgeHtml + imgHtml +
+      '<h3>' + rec.name + stockHtml + '</h3>' +
+      '<p class="result-tagline">"' + rec.tagline + '"</p>' +
+      '<p class="result-reason">' + rec.reason + '</p>' +
+      '<div class="result-tags">' +
+      rec.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') +
+      '</div>';
+
+    container.appendChild(card);
+  });
+
+  window.scrollTo(0, 0);
+}
+
+// ── Store contact ──
+function contactStore() {
+  if (confirm('高雄門市\n\n📍 前鎮區和平二路 238-1 號\n📞 07-281-0658\n🕐 11:00–20:00（週二公休）\n\n點確認直接撥打電話')) {
+    window.location.href = 'tel:072810658';
+  }
+}
+
+function restartForm() {
+  document.getElementById('result-page').style.display = 'none';
+  document.getElementById('form-page').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
