@@ -502,3 +502,30 @@ def recommend(data: AssessmentRequest):
     threading.Thread(target=write_to_sheet, args=(d, recs), daemon=True).start()
 
     return {"recommendations": recs}
+
+
+@app.get("/api/test-sheets")
+def test_sheets():
+    """Debug: test Google Sheets connection directly"""
+    try:
+        client_id     = os.environ.get("GOOGLE_CLIENT_ID")
+        client_secret = os.environ.get("GOOGLE_CLIENT_SECRET")
+        refresh_token = os.environ.get("GOOGLE_REFRESH_TOKEN")
+        sheet_id      = os.environ.get("GOOGLE_SHEET_ID")
+        missing = [k for k, v in {"GOOGLE_CLIENT_ID": client_id, "GOOGLE_CLIENT_SECRET": client_secret, "GOOGLE_REFRESH_TOKEN": refresh_token, "GOOGLE_SHEET_ID": sheet_id}.items() if not v]
+        if missing:
+            return {"ok": False, "error": f"Missing env vars: {missing}"}
+        creds = Credentials(
+            token=None, refresh_token=refresh_token,
+            token_uri="https://oauth2.googleapis.com/token",
+            client_id=client_id, client_secret=client_secret,
+            scopes=["https://www.googleapis.com/auth/spreadsheets"],
+        )
+        creds.refresh(Request())
+        gc = gspread.authorize(creds)
+        sh = gc.open_by_key(sheet_id)
+        ws = sh.sheet1
+        ws.append_row(["DEBUG測試", "debug", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], value_input_option="USER_ENTERED")
+        return {"ok": True, "sheet_title": sh.title}
+    except Exception as e:
+        return {"ok": False, "error": str(e)}

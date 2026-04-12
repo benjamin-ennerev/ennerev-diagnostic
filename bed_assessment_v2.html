@@ -344,6 +344,24 @@
     @keyframes spin { to { transform: rotate(360deg); } }
     .loading-text { font-size: 14px; color: #888; letter-spacing: 0.04em; }
 
+    /* ── Botanical Side Decorations ── */
+    .deco-panel {
+      position: fixed; top: 0; height: 100vh; width: 190px;
+      pointer-events: none; z-index: 0; overflow: hidden;
+    }
+    .deco-panel svg { width: 100%; height: 100%; }
+    .deco-left { left: 0; }
+    .deco-right { right: 0; transform: scaleX(-1); }
+    .deco-left::after {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 80px;
+      background: linear-gradient(to right, transparent, #f7f5f2);
+    }
+    .deco-right::after {
+      content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 80px;
+      background: linear-gradient(to right, #f7f5f2, transparent);
+    }
+    @media (max-width: 1100px) { .deco-panel { display: none; } }
+
     @media (max-width: 480px) {
       .inbody-grid { grid-template-columns: 1fr; }
       .cards { grid-template-columns: repeat(2, 1fr); }
@@ -352,6 +370,79 @@
   </style>
 </head>
 <body>
+
+<!-- Botanical Side Decorations -->
+<div class="deco-panel deco-left" aria-hidden="true">
+  <svg viewBox="0 0 180 1000" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" style="opacity:0.40">
+    <!-- Main olive branch stem -->
+    <path d="M90,1000 C88,930 98,870 88,810 C78,750 95,690 85,630 C75,570 92,510 82,450 C72,390 90,330 80,270 C70,210 87,155 77,100 C70,55 82,20 84,0" stroke="#9a7850" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    <!-- Small secondary branch -->
+    <path d="M80,265 C96,245 120,228 135,212" stroke="#9a7850" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+    <!-- Leaf pairs bottom to top -->
+    <g transform="translate(89,950)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-30)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(25)" opacity="0.62"/></g>
+    <g transform="translate(94,885)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-45)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(15)" opacity="0.62"/></g>
+    <!-- Olive fruits cluster 1 -->
+    <ellipse cx="112" cy="862" rx="5.5" ry="3.5" transform="rotate(-25 112 862)" fill="#9a7850" opacity="0.50"/>
+    <ellipse cx="122" cy="856" rx="4.5" ry="3" transform="rotate(-35 122 856)" fill="#9a7850" opacity="0.44"/>
+    <ellipse cx="105" cy="853" rx="4" ry="3" transform="rotate(-18 105 853)" fill="#9a7850" opacity="0.42"/>
+    <g transform="translate(88,820)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-35)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(30)" opacity="0.62"/></g>
+    <g transform="translate(82,755)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-50)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(20)" opacity="0.62"/></g>
+    <g transform="translate(91,695)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-40)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(35)" opacity="0.62"/></g>
+    <g transform="translate(85,635)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-30)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(25)" opacity="0.62"/></g>
+    <!-- Olive fruits cluster 2 -->
+    <ellipse cx="97" cy="612" rx="5" ry="3.5" transform="rotate(-20 97 612)" fill="#9a7850" opacity="0.48"/>
+    <ellipse cx="108" cy="606" rx="4.5" ry="3" transform="rotate(-30 108 606)" fill="#9a7850" opacity="0.44"/>
+    <g transform="translate(78,575)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-45)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(20)" opacity="0.62"/></g>
+    <g transform="translate(91,515)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-40)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(30)" opacity="0.62"/></g>
+    <g transform="translate(82,455)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-35)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(25)" opacity="0.62"/></g>
+    <g transform="translate(76,395)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-50)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(15)" opacity="0.62"/></g>
+    <!-- Olive fruits cluster 3 -->
+    <ellipse cx="88" cy="370" rx="5.5" ry="3.5" transform="rotate(-22 88 370)" fill="#9a7850" opacity="0.50"/>
+    <ellipse cx="78" cy="363" rx="4.5" ry="3" transform="rotate(-12 78 363)" fill="#9a7850" opacity="0.45"/>
+    <ellipse cx="99" cy="365" rx="4" ry="3" transform="rotate(-32 99 365)" fill="#9a7850" opacity="0.42"/>
+    <g transform="translate(88,335)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-40)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(30)" opacity="0.62"/></g>
+    <g transform="translate(80,275)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-30)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(25)" opacity="0.62"/></g>
+    <g transform="translate(72,215)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-45)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(20)" opacity="0.62"/></g>
+    <!-- Secondary branch leaves -->
+    <g transform="translate(112,230)"><path d="M0,0 C5,-6 18,-9 24,-5 C18,-1 5,3 0,0 Z" fill="#c0a878" transform="rotate(-55)" opacity="0.62"/></g>
+    <g transform="translate(127,218)"><path d="M0,0 C4,-5 16,-8 21,-4 C16,-1 4,3 0,0 Z" fill="#c0a878" transform="rotate(-60)" opacity="0.55"/></g>
+    <g transform="translate(84,160)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-40)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(35)" opacity="0.62"/></g>
+    <g transform="translate(77,105)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-35)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(25)" opacity="0.62"/></g>
+    <g transform="translate(80,50)"><path d="M0,0 C5,-6 20,-10 28,-6 C20,-1 5,3 0,0 Z" fill="#c0a878" transform="rotate(-50)" opacity="0.65"/><path d="M0,0 C-4,-5 -18,-9 -25,-5 C-18,-1 -4,3 0,0 Z" fill="#c0a878" transform="rotate(20)" opacity="0.55"/></g>
+  </svg>
+</div>
+<div class="deco-panel deco-right" aria-hidden="true">
+  <svg viewBox="0 0 180 1000" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" style="opacity:0.40">
+    <path d="M90,1000 C88,930 98,870 88,810 C78,750 95,690 85,630 C75,570 92,510 82,450 C72,390 90,330 80,270 C70,210 87,155 77,100 C70,55 82,20 84,0" stroke="#9a7850" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    <path d="M80,265 C96,245 120,228 135,212" stroke="#9a7850" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+    <g transform="translate(89,950)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-30)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(25)" opacity="0.62"/></g>
+    <g transform="translate(94,885)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-45)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(15)" opacity="0.62"/></g>
+    <ellipse cx="112" cy="862" rx="5.5" ry="3.5" transform="rotate(-25 112 862)" fill="#9a7850" opacity="0.50"/>
+    <ellipse cx="122" cy="856" rx="4.5" ry="3" transform="rotate(-35 122 856)" fill="#9a7850" opacity="0.44"/>
+    <ellipse cx="105" cy="853" rx="4" ry="3" transform="rotate(-18 105 853)" fill="#9a7850" opacity="0.42"/>
+    <g transform="translate(88,820)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-35)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(30)" opacity="0.62"/></g>
+    <g transform="translate(82,755)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-50)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(20)" opacity="0.62"/></g>
+    <g transform="translate(91,695)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-40)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(35)" opacity="0.62"/></g>
+    <g transform="translate(85,635)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-30)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(25)" opacity="0.62"/></g>
+    <ellipse cx="97" cy="612" rx="5" ry="3.5" transform="rotate(-20 97 612)" fill="#9a7850" opacity="0.48"/>
+    <ellipse cx="108" cy="606" rx="4.5" ry="3" transform="rotate(-30 108 606)" fill="#9a7850" opacity="0.44"/>
+    <g transform="translate(78,575)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-45)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(20)" opacity="0.62"/></g>
+    <g transform="translate(91,515)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-40)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(30)" opacity="0.62"/></g>
+    <g transform="translate(82,455)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-35)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(25)" opacity="0.62"/></g>
+    <g transform="translate(76,395)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-50)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(15)" opacity="0.62"/></g>
+    <ellipse cx="88" cy="370" rx="5.5" ry="3.5" transform="rotate(-22 88 370)" fill="#9a7850" opacity="0.50"/>
+    <ellipse cx="78" cy="363" rx="4.5" ry="3" transform="rotate(-12 78 363)" fill="#9a7850" opacity="0.45"/>
+    <ellipse cx="99" cy="365" rx="4" ry="3" transform="rotate(-32 99 365)" fill="#9a7850" opacity="0.42"/>
+    <g transform="translate(88,335)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-40)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(30)" opacity="0.62"/></g>
+    <g transform="translate(80,275)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-30)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(25)" opacity="0.62"/></g>
+    <g transform="translate(72,215)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-45)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(20)" opacity="0.62"/></g>
+    <g transform="translate(112,230)"><path d="M0,0 C5,-6 18,-9 24,-5 C18,-1 5,3 0,0 Z" fill="#c0a878" transform="rotate(-55)" opacity="0.62"/></g>
+    <g transform="translate(127,218)"><path d="M0,0 C4,-5 16,-8 21,-4 C16,-1 4,3 0,0 Z" fill="#c0a878" transform="rotate(-60)" opacity="0.55"/></g>
+    <g transform="translate(84,160)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-40)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(35)" opacity="0.62"/></g>
+    <g transform="translate(77,105)"><path d="M0,0 C6,-7 24,-12 34,-7 C24,-1 6,4 0,0 Z" fill="#c0a878" transform="rotate(-35)" opacity="0.72"/><path d="M0,0 C-5,-6 -21,-11 -29,-6 C-21,-1 -5,4 0,0 Z" fill="#c0a878" transform="rotate(25)" opacity="0.62"/></g>
+    <g transform="translate(80,50)"><path d="M0,0 C5,-6 20,-10 28,-6 C20,-1 5,3 0,0 Z" fill="#c0a878" transform="rotate(-50)" opacity="0.65"/><path d="M0,0 C-4,-5 -18,-9 -25,-5 C-18,-1 -4,3 0,0 Z" fill="#c0a878" transform="rotate(20)" opacity="0.55"/></g>
+  </svg>
+</div>
 
 <!-- Loading overlay -->
 <div class="loading-overlay" id="loading-overlay">
