@@ -43,7 +43,7 @@ if os.path.exists(_static_dir):
 MATTRESSES = [
     {
         "id": "SUPREME", "name": "ICONA Supreme", "collection": "ICONA",
-        "technology": "3000 微獨立筒", "firmness_score": 8, "zones": 7,
+        "technology": "3000 微獨立筒", "firmness_score": 9, "zones": 7,
         "weight_ideal": [45, 75],
         "best_positions": ["side", "mixed"],
         "best_pain": ["neck_shoulder", "hip", "numbness"],
@@ -55,7 +55,7 @@ MATTRESSES = [
     },
     {
         "id": "UNIQUE", "name": "ICONA Unique", "collection": "ICONA",
-        "technology": "1000 獨立筒", "firmness_score": 6, "zones": 7,
+        "technology": "1000 獨立筒", "firmness_score": 9.5, "zones": 7,
         "weight_ideal": [55, 90],
         "best_positions": ["back", "mixed", "side"],
         "best_pain": ["lower_back", "hip", "none"],
@@ -67,7 +67,7 @@ MATTRESSES = [
     },
     {
         "id": "HYGGE", "name": "HYBRIDO Hygge", "collection": "HYBRIDO",
-        "technology": "1000 獨立筒 × Fresh Memory", "firmness_score": 7, "zones": 7,
+        "technology": "1000 獨立筒 × Fresh Memory", "firmness_score": 6, "zones": 7,
         "weight_ideal": [50, 85],
         "best_positions": ["side", "mixed"],
         "best_pain": ["neck_shoulder", "insomnia", "lower_back"],
@@ -79,7 +79,7 @@ MATTRESSES = [
     },
     {
         "id": "ADAPTO", "name": "ICONA Adapto", "collection": "ICONA",
-        "technology": "800 獨立筒 × Wool-Tech", "firmness_score": 5, "zones": None,
+        "technology": "800 獨立筒 × Wool-Tech", "firmness_score": 8.5, "zones": None,
         "weight_ideal": [45, 85],
         "best_positions": ["mixed", "side", "back"],
         "best_pain": ["none", "insomnia"],
@@ -91,7 +91,7 @@ MATTRESSES = [
     },
     {
         "id": "XTRA-TECH", "name": "XTRA-Tech", "collection": "XTRA",
-        "technology": "1000 獨立筒 × 7區", "firmness_score": 9, "zones": 7,
+        "technology": "1000 獨立筒 × 7區", "firmness_score": 5, "zones": 7,
         "weight_ideal": [70, 130],
         "best_positions": ["back", "stomach"],
         "best_pain": ["lower_back", "hip", "snoring"],
@@ -103,7 +103,7 @@ MATTRESSES = [
     },
     {
         "id": "SPRING-800", "name": "SUPERBE Spring", "collection": "SUPERBE",
-        "technology": "800 XL獨立筒 18cm × 7區", "firmness_score": 9, "zones": 7,
+        "technology": "800 XL獨立筒 18cm × 7區", "firmness_score": 7, "zones": 7,
         "weight_ideal": [75, 130],
         "best_positions": ["back", "stomach", "mixed"],
         "best_pain": ["lower_back", "hip"],
@@ -115,7 +115,7 @@ MATTRESSES = [
     },
     {
         "id": "HERMITAGE", "name": "ELEGANZA Hermitage", "collection": "ELEGANZA",
-        "technology": "3000 微獨立筒 × Pillow Top", "firmness_score": 7, "zones": None,
+        "technology": "3000 微獨立筒 × Pillow Top", "firmness_score": 2, "zones": None,
         "weight_ideal": [45, 80],
         "best_positions": ["side", "mixed"],
         "best_pain": ["neck_shoulder", "insomnia", "none"],
@@ -123,18 +123,6 @@ MATTRESSES = [
         "tagline": "3000微獨立筒加Pillow Top，奢華義式美學與深度包覆",
         "tags": ["高雄現貨", "3000微獨立筒", "Pillow Top", "ErgoCert人體工學認證", "奢華款"],
         "image_url": "https://www.ennerev.it/wp-content/uploads/s-blob-v1-IMAGE-W7nlxVOtTTc.jpg",
-        "in_stock_kaohsiung": True,
-    },
-    {
-        "id": "XTRA-ORDINARIO", "name": "XTRA-Ordinario", "collection": "XTRA",
-        "technology": "專利獨立筒 210顆/m²", "firmness_score": 5, "zones": None,
-        "weight_ideal": [50, 100],
-        "best_positions": ["mixed", "side", "back"],
-        "best_pain": ["lower_back", "insomnia", "none"],
-        "best_usage": ["couple", "single"],
-        "tagline": "專利每平方米210顆獨立筒，義大利最革新的睡眠科技",
-        "tags": ["高雄現貨", "210顆/m²專利彈簧", "均衡支撐", "醫療器材認證", "創新設計"],
-        "image_url": "https://www.ennerev.it/wp-content/uploads/xtra-dettaglio-1.jpg",
         "in_stock_kaohsiung": True,
     },
 ]
