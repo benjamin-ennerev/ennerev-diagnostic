@@ -862,7 +862,7 @@ function getSelected(groupName, isMulti) {
 }
 
 // ═══════════════════════════════════════════════
-// MATTRESS DATABASE — 高雄門市庫存
+// MATTRESS DATABASE
 // ═══════════════════════════════════════════════
 var MATTRESSES = [
   {
@@ -871,16 +871,15 @@ var MATTRESSES = [
     collection: 'ICONA',
     technology: '3000 微獨立筒',
     spring_count: 3000, spring_diam_mm: 20,
-    firmness_score: 8,
+    firmness_score: 9,
     zones: 7,
-    in_stock_kaohsiung: true,
     weight_ideal: [45, 75],
     best_positions: ['side', 'mixed'],
     best_pain: ['neck_shoulder', 'hip', 'numbness'],
     best_usage: ['couple', 'single'],
     tagline: '3000 微獨立筒精密貼合，側睡族群的首選',
-    tags: ['高雄現貨', '3000微獨立筒', '7區支撐', '夫妻互不干擾'],
-    image_url: 'https://www.ennerev.it/wp-content/uploads/icona-materasso.png'
+    tags: ['3000微獨立筒', '7區支撐', '夫妻互不干擾'],
+    image_url: 'https://www.ennerev.it/wp-content/uploads/s-blob-v1-IMAGE-6Pfdq-XHNWs.png'
   },
   {
     id: 'UNIQUE',
@@ -888,16 +887,15 @@ var MATTRESSES = [
     collection: 'ICONA',
     technology: '1000 獨立筒',
     spring_count: 1000, spring_diam_mm: 57,
-    firmness_score: 6,
+    firmness_score: 9.5,
     zones: 7,
-    in_stock_kaohsiung: true,
     weight_ideal: [55, 90],
     best_positions: ['back', 'mixed', 'side'],
     best_pain: ['lower_back', 'hip', 'none'],
     best_usage: ['single', 'couple', 'elder'],
     tagline: '三段軟硬可選，一張床適合全家需求',
-    tags: ['高雄現貨', '1000獨立筒', '7區支撐', '三段軟硬可選'],
-    image_url: 'https://www.ennerev.it/wp-content/uploads/Unique-1.png'
+    tags: ['1000獨立筒', '7區支撐', '三段軟硬可選'],
+    image_url: 'https://www.ennerev.it/wp-content/uploads/unique.jpg'
   },
   {
     id: 'HYGGE',
@@ -905,16 +903,15 @@ var MATTRESSES = [
     collection: 'HYBRIDO',
     technology: '1000 獨立筒 × Fresh Memory',
     spring_count: 1000, spring_diam_mm: 57,
-    firmness_score: 7,
+    firmness_score: 6,
     zones: 7,
-    in_stock_kaohsiung: true,
     weight_ideal: [50, 85],
     best_positions: ['side', 'mixed'],
     best_pain: ['neck_shoulder', 'insomnia', 'lower_back'],
     best_usage: ['couple', 'single'],
     tagline: '記憶棉遇上獨立筒，北歐工藝的均衡睡眠',
-    tags: ['高雄現貨', '1000獨立筒', 'Fresh Memory', 'LAVATECH恆溫', '7區支撐'],
-    image_url: 'https://www.ennerev.it/wp-content/uploads/Nardik-2.png'
+    tags: ['1000獨立筒', 'Fresh Memory', 'LAVATECH恆溫', '7區支撐'],
+    image_url: 'https://www.ennerev.it/wp-content/uploads/Nardik1.png'
   },
   {
     id: 'ADAPTO',
@@ -922,16 +919,15 @@ var MATTRESSES = [
     collection: 'ICONA',
     technology: '800 獨立筒 × Wool-Tech',
     spring_count: 800, spring_diam_mm: null,
-    firmness_score: 5,
+    firmness_score: 8.5,
     zones: null,
-    in_stock_kaohsiung: true,
     weight_ideal: [45, 85],
     best_positions: ['mixed', 'side', 'back'],
     best_pain: ['none', 'insomnia'],
     best_usage: ['couple', 'single', 'child'],
     tagline: '均衡軟硬×美麗諾羊毛調溫，四季皆舒適',
-    tags: ['高雄現貨', '800獨立筒', '均衡支撐', '羊毛天然調溫', '四季兩用'],
-    image_url: 'https://www.ennerev.it/wp-content/uploads/ADAPTO.png'
+    tags: ['800獨立筒', '均衡支撐', '羊毛天然調溫', '四季兩用'],
+    image_url: 'https://www.ennerev.it/wp-content/uploads/s-blob-v1-IMAGE-SI4jknOwXkw.png'
   },
   {
     id: 'XTRA-TECH',
@@ -939,16 +935,15 @@ var MATTRESSES = [
     collection: 'XTRA',
     technology: '1000 獨立筒 × 7區',
     spring_count: 1000, spring_diam_mm: null,
-    firmness_score: 9,
+    firmness_score: 5,
     zones: 7,
-    in_stock_kaohsiung: true,
     weight_ideal: [70, 130],
     best_positions: ['back', 'stomach'],
     best_pain: ['lower_back', 'hip', 'snoring'],
     best_usage: ['single', 'elder'],
     tagline: '醫療器材一類認證，重度支撐脊椎的科學選擇',
-    tags: ['高雄現貨', '1000獨立筒', '醫療器材認證', '7區支撐', '超硬支撐'],
-    image_url: 'https://www.ennerev.it/wp-content/uploads/xtra-ambientata-navy.jpg'
+    tags: ['1000獨立筒', '醫療器材認證', '7區支撐'],
+    image_url: 'https://www.ennerev.it/wp-content/uploads/xtra-materasso-navy.jpg'
   },
   {
     id: 'SPRING-800',
@@ -956,16 +951,15 @@ var MATTRESSES = [
     collection: 'SUPERBE',
     technology: '800 XL獨立筒 18cm × 7區',
     spring_count: 800, spring_height_cm: 18,
-    firmness_score: 9,
+    firmness_score: 7,
     zones: 7,
-    in_stock_kaohsiung: true,
     weight_ideal: [75, 130],
     best_positions: ['back', 'stomach', 'mixed'],
     best_pain: ['lower_back', 'hip'],
     best_usage: ['single', 'couple'],
     tagline: '18cm XL超長彈簧，頂級旗艦的強力脊椎承托',
-    tags: ['高雄現貨', '800 XL獨立筒', '7區分區', '旗艦Superbe系列', '強力支撐'],
-    image_url: 'https://www.ennerev.it/wp-content/uploads/spring.png'
+    tags: ['800 XL獨立筒', '7區分區', '旗艦Superbe系列', '強力支撐'],
+    image_url: 'https://www.ennerev.it/wp-content/uploads/s-blob-v1-IMAGE-3gwsEzdWx_4.png'
   },
   {
     id: 'HERMITAGE',
@@ -973,34 +967,16 @@ var MATTRESSES = [
     collection: 'ELEGANZA',
     technology: '3000 微獨立筒 × Pillow Top',
     spring_count: 3000, spring_diam_mm: null,
-    firmness_score: 7,
+    firmness_score: 2,
     zones: null,
     pillow_top: true,
-    in_stock_kaohsiung: true,
     weight_ideal: [45, 80],
     best_positions: ['side', 'mixed'],
     best_pain: ['neck_shoulder', 'insomnia', 'none'],
     best_usage: ['couple', 'single'],
     tagline: '3000微獨立筒加Pillow Top，奢華義式美學與深度包覆',
-    tags: ['高雄現貨', '3000微獨立筒', 'Pillow Top', 'ErgoCert人體工學認證', '奢華款'],
-    image_url: 'https://www.ennerev.it/wp-content/uploads/s-blob-v1-IMAGE-W7nlxVOtTTc.jpg'
-  },
-  {
-    id: 'XTRA-ORDINARIO',
-    name: 'XTRA-Ordinario',
-    collection: 'XTRA',
-    technology: '專利獨立筒 210顆/m²',
-    spring_count: null, spring_per_sqm: 210,
-    firmness_score: 5,
-    zones: null,
-    in_stock_kaohsiung: true,
-    weight_ideal: [50, 100],
-    best_positions: ['mixed', 'side', 'back'],
-    best_pain: ['lower_back', 'insomnia', 'none'],
-    best_usage: ['couple', 'single'],
-    tagline: '專利每平方米210顆獨立筒，義大利最革新的睡眠科技',
-    tags: ['高雄現貨', '210顆/m²專利彈簧', '均衡支撐', '醫療器材認證', '創新設計'],
-    image_url: 'https://www.ennerev.it/wp-content/uploads/xtra-dettaglio-1.jpg'
+    tags: ['3000微獨立筒', 'Pillow Top', 'ErgoCert人體工學認證', '奢華款'],
+    image_url: 'https://www.ennerev.it/wp-content/uploads/s-blob-v1-IMAGE-bgqvrvDJ_n0.png'
   }
 ];
 
@@ -1054,9 +1030,6 @@ function scoreMattress(m, d) {
     if (d.muscle_rate <= 32 && m.firmness_score <= 7) score += 5;
   }
   if (d.visceral_fat !== null && d.visceral_fat > 10 && m.firmness_score >= 7) score += 3;
-
-  // 7. Always boost in-stock
-  if (m.in_stock_kaohsiung) score += 5;
 
   return score;
 }
@@ -1136,7 +1109,6 @@ function getRecommendations(data) {
       reason: buildReason(m, data),
       tags: m.tags,
       image_url: m.image_url,
-      in_stock_kaohsiung: m.in_stock_kaohsiung,
       rank: idx + 1
     };
   });
@@ -1172,7 +1144,7 @@ function saveAssessment(data, recommendations) {
       reason_detail: data.reason_detail
     },
     recommendations: recommendations.map(function(r) {
-      return { rank: r.rank, name: r.name, in_stock: r.in_stock_kaohsiung };
+      return { rank: r.rank, name: r.name };
     })
   };
 
@@ -1256,17 +1228,13 @@ function showResults(data, recs) {
       ? '<div class="top-pick-badge">✦ 最推薦</div>'
       : '<div class="rank-badge">推薦 ' + rec.rank + '</div>';
 
-    var stockHtml = rec.in_stock_kaohsiung
-      ? '<span class="stock-badge">高雄現貨</span>'
-      : '';
-
     var imgHtml = rec.image_url
       ? '<div class="result-card-image"><img src="' + rec.image_url + '" alt="' + rec.name + '" onerror="this.parentNode.innerHTML=\'<span class=result-card-image-placeholder>ENNEREV</span>\'"></div>'
       : '<div class="result-card-image"><span class="result-card-image-placeholder">ENNEREV</span></div>';
 
     card.innerHTML =
       badgeHtml + imgHtml +
-      '<h3>' + rec.name + stockHtml + '</h3>' +
+      '<h3>' + rec.name + '</h3>' +
       '<p class="result-tagline">"' + rec.tagline + '"</p>' +
       '<p class="result-reason">' + rec.reason + '</p>' +
       '<div class="result-tags">' +

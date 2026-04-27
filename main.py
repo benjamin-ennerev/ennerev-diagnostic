@@ -230,42 +230,26 @@ def build_reason(m: dict, d: dict) -> str:
 
 
 def get_top3(d: dict) -> list:
-    # ── 1. 從 Supabase 取得即時庫存 ──
-    inventory = fetch_inventory()
-    # 若 DB 無資料，預設全部有貨
-    def is_in_stock(mattress_id: str) -> bool:
-        return inventory.get(mattress_id, True)
-
-    # ── 2. 替每款床套上即時庫存狀態並計分 ──
+    # ── 1. 計分 ──
     scored = []
     for m in MATTRESSES:
-        m_live = dict(m)
-        m_live["in_stock_kaohsiung"] = is_in_stock(m["id"])
-        scored.append({"mattress": m_live, "score": score_mattress(m_live, d)})
+        scored.append({"mattress": m, "score": score_mattress(m, d)})
 
-    # ── 3. 排序規則：有貨 > 缺貨，同層內再按分數排 ──
-    scored.sort(key=lambda x: (
-        0 if x["mattress"]["in_stock_kaohsiung"] else 1,  # 有貨優先
-        -x["score"]
-    ))
+    # ── 2. 依分數排序 ──
+    scored.sort(key=lambda x: -x["score"])
 
-    # ── 4. 取前 3，標上 in_stock 標籤 ──
+    # ── 4. 取前 3 ──
     results = []
     for idx, item in enumerate(scored[:3]):
         m = item["mattress"]
-        tags = list(m["tags"])
-        if not m["in_stock_kaohsiung"] and "高雄現貨" in tags:
-            tags = [t for t in tags if t != "高雄現貨"]
-            tags.append("可預訂")
         results.append({
             "rank": idx + 1,
             "id": m["id"],
             "name": m["name"],
             "tagline": m["tagline"],
             "reason": build_reason(m, d),
-            "tags": tags,
+            "tags": list(m["tags"]),
             "image_url": m["image_url"],
-            "in_stock_kaohsiung": m["in_stock_kaohsiung"],
             "score": round(item["score"], 1),
         })
     return results
@@ -282,26 +266,6 @@ def get_db_conn():
         return None
     return psycopg2.connect(database_url)
 
-
-def fetch_inventory() -> dict:
-    """
-    Query inventory_kaohsiung from Supabase.
-    Returns dict: { product_id: in_stock (bool) }
-    Falls back to all-True if DB not available.
-    """
-    try:
-        conn = get_db_conn()
-        if conn is None:
-            return {}
-        cur = conn.cursor()
-        cur.execute("SELECT product_id, in_stock FROM inventory_kaohsiung")
-        rows = cur.fetchall()
-        cur.close()
-        conn.close()
-        return {row[0]: row[1] for row in rows}
-    except Exception as e:
-        print(f"[DB] fetch_inventory error: {e}")
-        return {}
 
 
 def save_to_db(d: dict, recs: list):
